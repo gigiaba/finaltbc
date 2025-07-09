@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>🛠️ CodeHub - სერვისები</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Patrick+Hand&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="css/style.css" />
+
+
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f8fb;
+      color: #1a1a1a;
+    }
+
+    header {
+      background-color: #001f3f;
+      color: white;
+      padding: 1rem 0;
+    }
+
+    .navbar {
+      max-width: 1000px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 1rem;
+    }
+
+    .logo a {
+      color: white;
+      font-size: 1.5rem;
+      text-decoration: none;
+      font-family: 'Patrick Hand', cursive;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 1rem;
+    }
+
+    .nav-links li a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .nav-links li a.active {
+      border-bottom: 2px solid #fff;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .service-card {
+      background: white;
+      padding: 1.5rem;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      margin-bottom: 1.5rem;
+    }
+
+    .service-card h2 {
+      margin-top: 0;
+      color: #003366;
+    }
+
+    .service-card p {
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 0.5rem 1rem;
+      background-color: #007bff;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      margin-top: 0.5rem;
+    }
+
+    .coming-soon span {
+      color: #ff8800;
+      font-weight: bold;
+      margin-left: 0.5rem;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background-color: #001f3f;
+      color: white;
+      margin-top: 2rem;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <nav class="navbar">
+      <div class="logo">
+        <a href="index.html">CodeHub 💻</a>
+      </div>
+      <ul class="nav-links">
+        <li><a href="index.html">მთავარი</a></li>
+        <li><a href="about.html">ჩვენს შესახებ</a></li>
+        <li><a href="services.html" class="active">სერვისები</a></li>
+        <li><a href="contact.html">კონტაქტი</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="container">
+    <h1>📚 ჩვენი სერვისები</h1>
+    <p>ჩვენ გთავაზობთ პროგრამირების ენების პრაქტიკულ კურსებს, დაწყებული საწყისიდან – დაწვრილებითი გზამკვლევებით, რჩევებით და მაგალითებით 🚀</p>
+
+    <div class="service-card">
+      <h2>🐍 Python კურსი</h2>
+      <p>
+        ისწავლე Python – ერთ-ერთი ყველაზე პოპულარული ენა მონაცემთა ანალიზისთვის, ავტომატიზაციისთვის და ვებ-დეველოპმენტისთვის.
+        ჩვენი კურსი მოიცავს მარტივ ახსნებს, კოდების მაგალითებს და პრაქტიკულ დავალებებს.
+      </p>
+      <a class="btn" href="service-python.html">📘 გადადი კურსზე</a>
+    </div>
+
+    <div class="service-card coming-soon">
+      <h2>🟨 JavaScript კურსი <span>🔜 მალე დაემატება</span></h2>
+      <p>
+        ინტერფეისების, ანიმაციებისა და ვებ დინამიკის საწყისები – JavaScript არის ვებსაიტების გულისცემა.
+      </p>
+    </div>
+
+    <div class="service-card coming-soon">
+      <h2>🦀 Rust კურსი <span>🔧 მალე დაემატება</span></h2>
+      <p>
+        სისტემური პროგრამირება სისწრაფითა და უსაფრთხოებით – იდეალურია მათთვის, ვისაც სურს ღრმა კონტროლი და მაღალი ხარისხი.
+      </p>
+    </div>
+  </main>
+
+  <footer>
+    <p>© 2025 CodeHub | შექმნილია სიყვარულით 💙</p>
+  </footer>
+
+</body>
+</html>

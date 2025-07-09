@@ -1,0 +1,297 @@
+/* Reset და ბაზისი */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Roboto', sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-color: #f9f9f9;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #001f3f;
+  padding: 1rem;
+  flex-wrap: wrap;
+}
+.logo {
+  font-family: 'Patrick Hand', cursive;
+  color: #ffffff;
+  font-size: 1.5rem;
+}
+.nav-links,
+.nav-menu {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+}
+.nav-links li a,
+.nav-menu li a {
+  color: #ffffff;
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+}
+.nav-links li a:hover,
+.nav-menu li a:hover,
+.nav-links li a.active,
+.nav-menu li a.active {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+.profile-icon {
+  color: #ffffff;
+  font-size: 1.5rem;
+}
+
+/* Hamburger (მობილური) */
+.nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+.hamburger,
+.hamburger::before,
+.hamburger::after {
+  display: block;
+  background-color: #ffffff;
+  height: 2px;
+  width: 25px;
+  border-radius: 2px;
+  position: relative;
+}
+.hamburger::before,
+.hamburger::after {
+  content: '';
+  position: absolute;
+}
+.hamburger::before {
+  top: -8px;
+}
+.hamburger::after {
+  top: 6px;
+}
+
+/* Responsive Menu */
+@media (max-width: 768px) {
+  .nav-menu,
+  .nav-links {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: #001f3f;
+    flex-direction: column;
+    display: none;
+  }
+  .nav-menu.open,
+  .nav-links.open {
+    display: flex;
+  }
+  .nav-toggle {
+    display: block;
+  }
+}
+
+/* Hero Section */
+.hero {
+  background: #ffffff;
+  text-align: center;
+  padding: 2rem;
+  margin: 2rem auto;
+  max-width: 800px;
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+.hero h1 {
+  font-size: 2rem;
+  color: #001f3f;
+  margin-bottom: 1rem;
+}
+.hero p {
+  margin-bottom: 1.5rem;
+}
+.btn {
+  background-color: #007bff;
+  color: #fff;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.25rem;
+  display: inline-block;
+  text-align: center;
+}
+.btn:hover {
+  opacity: 0.9;
+}
+
+/* Popular Languages */
+.popular-langs,
+.about {
+  max-width: 1000px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+.popular-langs h2,
+.about h1 {
+  font-family: 'Patrick Hand', cursive;
+  font-size: 2rem;
+  color: #001f3f;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+.langs-grid {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+.lang-card {
+  background: #ffffff;
+  text-align: center;
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+.lang-card h3 {
+  margin: 1rem 0 0.5rem;
+  color: #001f3f;
+}
+
+/* About Page Styles */
+.about.card,
+.founder.card {
+  background: #ffffff;
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+.founders {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 2rem;
+}
+.founder {
+  flex: 1 1 250px;
+  text-align: center;
+}
+.founder img {
+  width: 100%;
+  height: auto;
+  border-radius: 0.5rem;
+}
+.mission,
+.quality {
+  margin-top: 1.5rem;
+}
+.mission h2,
+.quality h2 {
+  font-size: 1.75rem;
+  color: #001f3f;
+  margin-bottom: 0.5rem;
+}
+
+/* Services Page */
+.service-card {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  margin-bottom: 1.5rem;
+}
+.service-card h2 {
+  margin-top: 0;
+  color: #003366;
+}
+.service-card p {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+.coming-soon span {
+  color: #ff8800;
+  font-weight: bold;
+  margin-left: 0.5rem;
+}
+
+/* Contact Page */
+.contact-section {
+  margin: 2rem auto;
+  padding: 2rem;
+  max-width: 1000px;
+  background: #fff;
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+.contact-section h1 {
+  font-size: 2rem;
+  color: #001f3f;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  font-family: 'Patrick Hand', cursive;
+}
+.contact-grid {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+.contact-info, .contact-form {
+  flex: 1 1 400px;
+}
+.contact-info h2 {
+  margin-top: 1rem;
+  font-size: 1.2rem;
+  color: #003366;
+}
+.contact-info p {
+  margin: 0.25rem 0 1rem;
+}
+.social-icons a {
+  margin-right: 1rem;
+  font-size: 1.5rem;
+  color: #001f3f;
+}
+.social-icons a:hover {
+  color: #007bff;
+}
+.contact-form label {
+  display: block;
+  margin-top: 1rem;
+  font-weight: bold;
+}
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 0.75rem;
+  margin-top: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 0.25rem;
+}
+.contact-form .btn {
+  margin-top: 1.5rem;
+  background-color: #007bff;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.contact-form .btn:hover {
+  background-color: #0056b3;
+}
+
+/* Footer */
+footer {
+  background-color: #001f3f;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  margin-top: 2rem;
+}
