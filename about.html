@@ -6,9 +6,252 @@
   <title>📖 CodeHub - ჩვენს შესახებ</title>
   <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Patrick+Hand&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-  <link rel="stylesheet" href="style.css" />
+
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      margin: 0;
+      background-color: #f4f8fb;
+      color: #1a1a1a;
+      line-height: 1.6;
+    }
+
+    header {
+      background-color: #001f3f;
+      padding: 1rem;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .navbar {
+      max-width: 900px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+
+    .logo {
+      font-family: 'Patrick Hand', cursive;
+      font-size: 1.6rem;
+      color: white;
+      text-decoration: none;
+      user-select: none;
+    }
+
+    .nav-menu {
+      list-style: none;
+      display: flex;
+      gap: 1.5rem;
+      margin: 0;
+      padding: 0;
+    }
+
+    .nav-menu li a {
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.3s ease;
+      padding: 0.25rem 0;
+      position: relative;
+    }
+
+    .nav-menu li a:hover,
+    .nav-menu li a.active {
+      color: #007bff;
+    }
+
+    .nav-menu li a.active::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background-color: #007bff;
+      border-radius: 2px;
+    }
+
+    /* Hamburger Button */
+    .nav-toggle {
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      width: 30px;
+      height: 25px;
+      cursor: pointer;
+    }
+
+    .nav-toggle .hamburger,
+    .nav-toggle .hamburger::before,
+    .nav-toggle .hamburger::after {
+      content: "";
+      background-color: white;
+      height: 3px;
+      border-radius: 3px;
+      transition: all 0.3s ease;
+      position: relative;
+      display: block;
+    }
+
+    .nav-toggle .hamburger::before,
+    .nav-toggle .hamburger::after {
+      position: absolute;
+      width: 100%;
+    }
+
+    .nav-toggle .hamburger::before {
+      top: -8px;
+    }
+
+    .nav-toggle .hamburger::after {
+      top: 8px;
+    }
+
+    /* Responsive menu open state */
+    .nav-menu.open {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      margin-top: 1rem;
+      background-color: #001f3f;
+      border-radius: 8px;
+      padding: 1rem 0;
+      animation: slideDown 0.3s ease forwards;
+    }
+
+    /* Mobile responsiveness */
+    @media (max-width: 768px) {
+      .nav-menu {
+        display: none;
+      }
+      .nav-toggle {
+        display: flex;
+      }
+    }
+
+    main {
+      max-width: 900px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+
+    .about.card {
+      background: white;
+      border-radius: 12px;
+      padding: 2rem;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+      animation: fadeInUp 0.7s ease forwards;
+      opacity: 0;
+      transform: translateY(20px);
+    }
+
+    .about.card h1 {
+      font-size: 2.5rem;
+      color: #003366;
+      margin-bottom: 1rem;
+      font-family: 'Patrick Hand', cursive;
+    }
+
+    .about.card p {
+      font-size: 1.1rem;
+      margin-bottom: 2rem;
+      color: #333;
+    }
+
+    .founders {
+      display: flex;
+      gap: 2rem;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-bottom: 2rem;
+    }
+
+    .founder.card {
+      background: #e9f1ff;
+      border-radius: 10px;
+      padding: 1rem;
+      text-align: center;
+      width: 220px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+      transition: transform 0.3s ease;
+      cursor: default;
+    }
+
+    .founder.card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 10px 25px rgba(0,123,255,0.25);
+    }
+
+    .founder.card img {
+      border-radius: 50%;
+      width: 140px;
+      height: 140px;
+      object-fit: cover;
+      margin-bottom: 1rem;
+      border: 3px solid #007bff;
+    }
+
+    .founder.card h3 {
+      margin: 0.5rem 0;
+      color: #003366;
+      font-family: 'Patrick Hand', cursive;
+    }
+
+    .founder.card p {
+      font-size: 1rem;
+      color: #444;
+    }
+
+    section.mission,
+    section.quality {
+      background: #e6f0ff;
+      border-radius: 10px;
+      padding: 1.5rem 2rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+      animation: fadeInUp 0.7s ease forwards;
+      opacity: 0;
+      transform: translateY(20px);
+    }
+
+    section.mission h2,
+    section.quality h2 {
+      color: #003366;
+      margin-top: 0;
+      font-family: 'Patrick Hand', cursive;
+      font-size: 1.8rem;
+    }
+
+    section.mission p,
+    section.quality p {
+      font-size: 1.05rem;
+      color: #333;
+    }
+
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes slideDown {
+      from {
+        opacity: 0;
+        transform: translateY(-10%);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
 </head>
 <body>
+
   <header>
     <nav class="navbar">
       <a href="index.html" class="logo">CodeHub 💻</a>
@@ -31,13 +274,11 @@
 
       <div class="founders">
         <article class="founder card">
-          <img src="assets/images/founder1.jpg" alt="Founder 1" />
           <h3>👩‍🎨 ნინო მარგიანი</h3>
           <p>UI/UX დიზაინერი. მისი მიკერძოება ადამიანური ინტერფეისია და მინიმალიზმი.</p>
         </article>
 
         <article class="founder card">
-          <img src="assets/images/founder2.jpg" alt="Founder 2" />
           <h3>👨‍💻 გიორგი ქებაძე</h3>
           <p>ტექნიკური დირექტორი და კოდის არქიტექტორი.</p>
         </article>
@@ -55,6 +296,15 @@
     </section>
   </main>
 
-  <script src="script.js"></script>
+  <script>
+    const navToggle = document.querySelector('.nav-toggle');
+    const navMenu = document.querySelector('.nav-menu');
+
+    navToggle.addEventListener('click', () => {
+      navMenu.classList.toggle('open');
+      navToggle.classList.toggle('open');
+    });
+  </script>
+
 </body>
 </html>

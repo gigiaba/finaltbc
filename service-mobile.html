@@ -3,15 +3,15 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>🐍 Python ენა | CodeHub</title>
-
+  <title>📱 მობილური აპლიკაციები | CodeHub</title>
   <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Patrick+Hand&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 
   <style>
     html, body {
       height: 100%;
-      margin: 0; padding: 0;
+      margin: 0;
+      padding: 0;
       font-family: 'Roboto', sans-serif;
       background-color: #f9f9fc;
       color: #1a1a1a;
@@ -84,11 +84,11 @@
     pre {
       background-color: #272822;
       color: #f8f8f2;
-      padding: 1.5rem;
+      padding: 1rem;
       border-radius: 8px;
       overflow-x: auto;
-      font-size: 1.8rem;
-      line-height: 1.8;
+      font-size: 1.4rem;
+      line-height: 1.6;
       border-left: 6px solid #007bff;
       margin-top: 3rem;
       margin-bottom: 2rem;
@@ -132,23 +132,30 @@
     </header>
 
     <main class="container">
-      <h1>🐍 Python</h1>
-      <p>Python არის ერთ-ერთი ყველაზე პოპულარული და მრავალმხრივი პროგრამირების ენა მსოფლიოში. ის მარტივია, წაკითხვადი და გამოიყენება მრავალი სფეროში.</p>
+      <h1>📱 მობილური აპლიკაციები</h1>
+      <p>მობილური აპლიკაციების შექმნა მოიცავს iOS და Android პლატფორმებისთვის აპლიკაციების დეველოპმენტს სხვადასხვა ტექნოლოგიებით.</p>
 
       <h2>📌 სად გამოიყენება:</h2>
       <ul>
-        <li>📊 მონაცემთა ანალიზი</li>
-        <li>🌐 ვებ-დეველოპმენტი</li>
-        <li>🧠 ხელოვნური ინტელექტი</li>
-        <li>⚙️ სკრიპტინგი და ავტომატიზაცია</li>
+        <li>📱 Native აპლიკაციები (Swift, Kotlin)</li>
+        <li>🌐 Cross-platform დეველოპმენტი (Flutter, React Native)</li>
+        <li>⚙️ აპლიკაციის ინტეგრაცია Backend-სთან</li>
+        <li>🎨 UI/UX დიზაინი მობილურზე</li>
       </ul>
 
       <h2>💻 საწყისი კოდი:</h2>
       <pre>
-def greet(name):
-    print(f"გამარჯობა, {name}!")
+import React from 'react';
+import { Text, View, Button, Alert } from 'react-native';
 
-greet("CodeHub")
+export default function App() {
+  return (
+    &lt;View&gt;
+      &lt;Text&gt;Hello, Mobile App!&lt;/Text&gt;
+      &lt;Button title="Press me" onPress={() =&gt; Alert.alert('Hello from React Native!')} /&gt;
+    &lt;/View&gt;
+  );
+}
       </pre>
 
       <a href="services.html" class="btn">← დაბრუნდი სერვისებზე</a>
@@ -156,7 +163,7 @@ greet("CodeHub")
   </div>
 
   <footer>
-    <p>© 2025 CodeHub | Python კურსი 🐍</p>
+    <p>© 2025 CodeHub | მობილური აპლიკაციები</p>
   </footer>
 </body>
 </html>

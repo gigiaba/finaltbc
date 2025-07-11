@@ -6,10 +6,7 @@
   <title>🛠️ CodeHub - სერვისები</title>
 
   <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Patrick+Hand&display=swap" rel="stylesheet" />
-
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-  <link rel="stylesheet" href="css/style.css" />
-
 
   <style>
     body {
@@ -27,7 +24,7 @@
     }
 
     .navbar {
-      max-width: 1000px;
+      max-width: 900px;
       margin: 0 auto;
       display: flex;
       justify-content: space-between;
@@ -52,6 +49,11 @@
       color: white;
       text-decoration: none;
       font-weight: bold;
+      transition: color 0.3s ease;
+    }
+
+    .nav-links li a:hover {
+      color: #007bff;
     }
 
     .nav-links li a.active {
@@ -62,29 +64,74 @@
       max-width: 900px;
       margin: 2rem auto;
       padding: 0 1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
     }
 
     h1 {
       font-size: 2rem;
       margin-bottom: 1rem;
+      color: #003366;
+      opacity: 0;
+      transform: translateY(-20px);
+      animation: fadeDown 0.8s forwards;
     }
 
+    /* სერვისების ბლოკები */
     .service-card {
       background: white;
       padding: 1.5rem;
       border-radius: 10px;
       box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-      margin-bottom: 1.5rem;
+      opacity: 0;
+      transform: translateY(30px);
+      animation: fadeUp 0.7s ease-out forwards;
+      animation-delay: var(--delay);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: default;
+    }
+    .service-card:hover {
+      transform: translateY(-8px) scale(1.02);
+      box-shadow: 0 8px 20px rgba(0, 123, 255, 0.25);
+      cursor: pointer;
+    }
+
+    /* ანიმაციის დაგვიანება ბლოკებისთვის */
+    .service-card:nth-of-type(1) {
+      --delay: 0.2s;
+    }
+    .service-card:nth-of-type(2) {
+      --delay: 0.4s;
+    }
+    .service-card:nth-of-type(3) {
+      --delay: 0.6s;
+    }
+    .service-card:nth-of-type(4) {
+      --delay: 0.8s;
+    }
+    .service-card:nth-of-type(5) {
+      --delay: 1s;
     }
 
     .service-card h2 {
       margin-top: 0;
       color: #003366;
+      position: relative;
+      display: inline-block;
+      overflow: hidden;
+    }
+
+    .service-card h2 span {
+      color: #ff8800;
+      font-weight: bold;
+      margin-left: 0.5rem;
     }
 
     .service-card p {
       font-size: 1rem;
       line-height: 1.6;
+      margin-top: 0.5rem;
     }
 
     .btn {
@@ -95,12 +142,11 @@
       text-decoration: none;
       border-radius: 5px;
       margin-top: 0.5rem;
+      transition: background-color 0.3s ease;
     }
 
-    .coming-soon span {
-      color: #ff8800;
-      font-weight: bold;
-      margin-left: 0.5rem;
+    .btn:hover {
+      background-color: #0056b3;
     }
 
     footer {
@@ -109,6 +155,24 @@
       background-color: #001f3f;
       color: white;
       margin-top: 2rem;
+    }
+
+    /* Keyframes */
+    @keyframes fadeUp {
+      0% {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    @keyframes fadeDown {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
   </style>
 </head>
@@ -130,7 +194,6 @@
 
   <main class="container">
     <h1>📚 ჩვენი სერვისები</h1>
-    <p>ჩვენ გთავაზობთ პროგრამირების ენების პრაქტიკულ კურსებს, დაწყებული საწყისიდან – დაწვრილებითი გზამკვლევებით, რჩევებით და მაგალითებით 🚀</p>
 
     <div class="service-card">
       <h2>🐍 Python კურსი</h2>
@@ -141,19 +204,42 @@
       <a class="btn" href="service-python.html">📘 გადადი კურსზე</a>
     </div>
 
-    <div class="service-card coming-soon">
-      <h2>🟨 JavaScript კურსი <span>🔜 მალე დაემატება</span></h2>
+    <div class="service-card">
+      <h2>🟨 JavaScript კურსი</h2>
       <p>
         ინტერფეისების, ანიმაციებისა და ვებ დინამიკის საწყისები – JavaScript არის ვებსაიტების გულისცემა.
+        კურსი შეიცავს საფუძვლიან თეორიას, მაგალითებს და დავალებებს.
       </p>
+      <a class="btn" href="service-javascript.html">📘 გადადი კურსზე</a>
     </div>
 
-    <div class="service-card coming-soon">
-      <h2>🦀 Rust კურსი <span>🔧 მალე დაემატება</span></h2>
+    <div class="service-card">
+      <h2>🦀 Rust კურსი</h2>
       <p>
         სისტემური პროგრამირება სისწრაფითა და უსაფრთხოებით – იდეალურია მათთვის, ვისაც სურს ღრმა კონტროლი და მაღალი ხარისხი.
+        კურსი მოიცავს Rust-ის საფუძვლებს, მეხსიერების მართვას და პრაქტიკულ პროექტებს.
       </p>
+      <a class="btn" href="service-rust.html">📘 გადადი კურსზე</a>
     </div>
+
+    <div class="service-card">
+      <h2>💻 Backend Development კურსი</h2>
+      <p>
+        ისწავლე სერვერული პროგრამირება, მონაცემთა ბაზების მართვა, API შექმნა და უსაფრთხოების პრინციპები.
+        იდეალურია მათთვის, ვისაც სურს სუფთა და უსაფრთხო backend აპლიკაციების შექმნა.
+      </p>
+      <a class="btn" href="service-backend.html">📘 გადადი კურსზე</a>
+    </div>
+
+    <div class="service-card">
+      <h2>📱 Mobile Apps Development კურსი</h2>
+      <p>
+        შექმენი მობილური აპლიკაციები Android და iOS პლატფორმებისთვის.
+        კურსში შედის React Native, Flutter და Native SDK-ები.
+      </p>
+      <a class="btn" href="service-mobile.html">📘 გადადი კურსზე</a>
+    </div>
+
   </main>
 
   <footer>
